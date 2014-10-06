@@ -1,0 +1,25 @@
+{
+  "name": "twitter-data",
+  "version": "0.0.1",
+  "description": "To access twitter public streams",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mpiivonen/twitter-data"
+  },
+  "keywords": [
+    "twitter",
+    "api",
+    "data",
+    "stream"
+  ],
+  "author": "Markus Iivonen <markuspiivonen@gmail.com> (https://github.com/mpiivonen/twitter-data)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mpiivonen/twitter-data/issues"
+  },
+  "homepage": "https://github.com/mpiivonen/twitter-data"
+}
