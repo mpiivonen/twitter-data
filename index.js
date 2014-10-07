@@ -1,7 +1,11 @@
 var config = require('./package.json');
 
 var printHelp = function(callback) {
-  return callback("this is help");
+  var help = 'Help: \n';
+  help += config.help;
+  help += '\n';
+
+  return callback(help);
 }
 
 var printVersion = function(callback) {
