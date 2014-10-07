@@ -1,10 +1,14 @@
+var config = require('./package.json');
 
 var printHelp = function(callback) {
   return callback("this is help");
 }
 
 var printVersion = function(callback) {
-  return callback("Version: 0.0.1");
+  var version = 'Version: '+ config.version + '\n';
+  version += 'Licence: ' + config.license + '\n';
+  version += config.copyright;
+  return callback(version);
 }
 
 var arguments = process.argv.slice(2);

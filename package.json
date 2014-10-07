@@ -18,8 +18,12 @@
   ],
   "author": "Markus Iivonen <markuspiivonen@gmail.com> (https://github.com/mpiivonen/twitter-data)",
   "license": "MIT",
+  "copyright" : "Copyright (c) 2014 Markus Iivonen",
   "bugs": {
     "url": "https://github.com/mpiivonen/twitter-data/issues"
+  },
+  "dependencies": {
+    "config": "^1.2"
   },
   "homepage": "https://github.com/mpiivonen/twitter-data"
 }
