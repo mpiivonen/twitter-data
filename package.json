@@ -1,6 +1,6 @@
 {
   "name": "twitter-data",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "To access twitter public streams",
   "main": "index.js",
   "scripts": {
