@@ -16,14 +16,14 @@ var printVersion = function(callback) {
   return callback(version);
 }
 
-var arguments = process.argv.slice(2);
+var userArgs= process.argv.slice(2);
 
-if(arguments.indexOf('-h') != -1 || arguments.indexOf('--help') != -1) {
+if(userArgs.indexOf('-h') != -1 || userArgs.indexOf('--help') != -1) {
   printHelp(function(help){
     console.log(help);
   });
 }
-else if(arguments.indexOf('-v') != -1 || arguments.indexOf('-V') != -1 || arguments.indexOf('--version') != -1){
+else if(userArgs.indexOf('-v') != -1 || arguments.indexOf('-V') != -1 || userArgs.indexOf('--version') != -1){
   printVersion(function(version){
     console.log(version);
   });
