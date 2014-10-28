@@ -1,4 +1,5 @@
 var config = require('./package.json');
+var stream = require('./lib/twitter-stream.js');
 
 var printHelp = function(callback) {
   var help = 'Help: \n';
@@ -22,8 +23,11 @@ if(arguments.indexOf('-h') != -1 || arguments.indexOf('--help') != -1) {
     console.log(help);
   });
 }
-if(arguments.indexOf('-v') != -1 || arguments.indexOf('-V') != -1 || arguments.indexOf('--version') != -1){
+else if(arguments.indexOf('-v') != -1 || arguments.indexOf('-V') != -1 || arguments.indexOf('--version') != -1){
   printVersion(function(version){
     console.log(version);
   });
+}
+else {
+  stream.initConfig();
 }

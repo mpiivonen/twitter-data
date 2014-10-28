@@ -1,0 +1,11 @@
+{
+  "twitter": {
+    "apiKey": "user provided api key",
+    "streamType": {
+      "basic": "stream url"
+    }
+  },
+  "local": {
+    "storage": "local url here"
+  }
+}
