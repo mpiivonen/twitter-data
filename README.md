@@ -24,5 +24,25 @@ Version 0.4.0
 Support for input stream manipulation as
 to strip unnecessary data
 
+Set max size of a single file before splitting
+data into other file
+
 Version 0.5.0
 ...
+
+Gulp plugin idea
+
+Once max stream file size has been reached,
+minify content and copy to other location.
+
+Version 0.1.0
+
+Get max file size and detect when it has been reached.
+
+Version 0.2.0
+
+Minify content
+
+Version 0.3.0
+
+Copy processed files to user preferred location
