@@ -22,7 +22,7 @@ if(arguments.indexOf('-h') != -1 || arguments.indexOf('--help') != -1) {
     console.log(help);
   });
 }
-if(arguments.indexOf('-v') != -1 || arguments.indexOf('--version') != -1){
+if(arguments.indexOf('-v') != -1 || arguments.indexOf('-V') != -1 || arguments.indexOf('--version') != -1){
   printVersion(function(version){
     console.log(version);
   });
