@@ -23,7 +23,7 @@
     "./lib"
   ],
   "scripts": {
-    "test": "gulp"
+    "test": "gulp && nodeunit" 
   },
   "author": "Markus Iivonen <markuspiivonen@gmail.com> (https://github.com/mpiivonen/twitter-data)",
   "licenses": [
