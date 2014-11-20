@@ -4,7 +4,7 @@
   "description": "To access twitter public streams",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "gulp && nodeunit"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,6 @@
     "README.md",
     "./lib"
   ],
-  "scripts": {
-    "test": "gulp && nodeunit" 
-  },
   "author": "Markus Iivonen <markuspiivonen@gmail.com> (https://github.com/mpiivonen/twitter-data)",
   "licenses": [
     {
@@ -41,7 +38,8 @@
     "config": "^1.2",
     "gulp": "~3.6.2",
     "gulp-jshint": "^1.8.6",
-    "nodeunit": "0.9.0"
+    "nodeunit": "0.9.0",
+    "coveralls": "^2.11.2"
   },
   "homepage": "https://github.com/mpiivonen/twitter-data"
 }

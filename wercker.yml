@@ -15,3 +15,23 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+    # Build Code Coverage
+    - script:
+        name: set coveralls token
+        code: |
+          echo service_name: wercker > .coveralls.yml
+          echo repo_token: $COVERALLS_TOKEN >> .coveralls.yml
+          export COVERALLS_SERVICE_NAME=wercker
+          export COVERALLS_REPO_TOKEN=$COVERALLS_TOKEN
+          export COVERALLS_GIT_COMMIT=$WERCKER_GIT_COMMIT
+          export COVERALLS_SERVICE_JOB_ID=$WERCKER_BUILD_ID
+          export COVERALLS_GIT_BRANCH=$WERCKER_GIT_BRANCH
+    - script:
+        name: install Istanbul
+        code: sudo npm install -g istanbul
+    - script:
+        name: install Nodeunit
+        code: sudo npm install -g nodeunit
+    - script:
+        name: send to reports to coveralls
+        code: make coveralls
