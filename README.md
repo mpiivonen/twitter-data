@@ -2,6 +2,8 @@ twitter-data
 ============
 [![wercker status](https://app.wercker.com/status/f01ac315298003f64b90b810b1157786/s "wercker status")](https://app.wercker.com/project/bykey/f01ac315298003f64b90b810b1157786)
 
+[![Dependency Status](https://david-dm.org/mpiivonen/twitter-data.png)](https://david-dm.org/mpiivonen/twitter-data#info=dependencies)
+
 [![Coverage Status](https://coveralls.io/repos/mpiivonen/twitter-data/badge.png?branch=master)](https://coveralls.io/r/mpiivonen/twitter-data?branch=master)
 
 Current version 0.1.0
