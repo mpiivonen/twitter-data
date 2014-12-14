@@ -17,13 +17,19 @@ var printVersion = function(callback) {
 }
 
 var userArgs= process.argv.slice(2);
+var useOptionalStream = '';
+
+// set selected stream
+if(userArgs.indexOf('--stream') != -1) {
+  useOptionalStream = userArgs[(userArgs.indexOf('--stream')+1)];
+}
 
 if(userArgs.indexOf('-h') != -1 || userArgs.indexOf('--help') != -1) {
   printHelp(function(help){
     console.log(help);
   });
 }
-else if(userArgs.indexOf('-v') != -1 || arguments.indexOf('-V') != -1 || userArgs.indexOf('--version') != -1){
+else if(userArgs.indexOf('-v') != -1 || userArgs.indexOf('-V') != -1 || userArgs.indexOf('--version') != -1){
   printVersion(function(version){
     console.log(version);
   });

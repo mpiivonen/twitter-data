@@ -2,7 +2,11 @@
   "twitter": {
     "apiKey": "user provided api key",
     "streamType": {
-      "basic": "stream url"
+      "basic": "stream url",
+      "userSpecific": {
+        "example1": "example1",
+        "example2": "example2"
+      }
     }
   },
   "local": {

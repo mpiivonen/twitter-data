@@ -13,7 +13,8 @@ exports['checkInit'] = function (test) {
   test.equal(stream.getStorage(),testUserConfig.local.storage);
   test.deepEqual(stream.getConnection(),{
     "apikey": testUserConfig.twitter.apiKey,
-    "stream" : testUserConfig.twitter.streamType.basic
+    "stream" : testUserConfig.twitter.streamType.basic,
+    "optionalStream": testUserConfig.twitter.streamType.userSpecific
   });
 
   test.done();
