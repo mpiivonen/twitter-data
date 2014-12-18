@@ -1,5 +1,6 @@
 var config = require('./package.json');
 var stream = require('./lib/twitter-stream.js');
+var fs = require('fs');
 
 var printHelp = function(callback) {
   var help = 'Help: \n';
@@ -35,5 +36,10 @@ else if(userArgs.indexOf('-v') != -1 || userArgs.indexOf('-V') != -1 || userArgs
   });
 }
 else {
+
   stream.initConfig();
+  var file = stream.getStorage();
+  var writeStream = fs.createWriteStream(file, {'flags': 'a'});
+  var client = stream.createClient();
+  stream.saveStream(client,writeStream);
 }

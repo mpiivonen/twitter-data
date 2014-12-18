@@ -6,7 +6,10 @@ twitter-data
 
 [![Coverage Status](https://coveralls.io/repos/mpiivonen/twitter-data/badge.png?branch=master)](https://coveralls.io/r/mpiivonen/twitter-data?branch=master)
 
-Current version 0.1.0
+NPM module to store and manipulate twitter data got via streaming API.
+Twitter auth and client creationg is based on https://github.com/AvianFlu/ntwitter
+
+Current version 0.3.0
 
 Support for --version -v and --help -h options
 
@@ -20,16 +23,13 @@ Configure data storage where stream is saved
 
 Version 0.3.0
 
-Support multiple streams from config
-and user can choose one via commandline parameter
+Set max size of a single file before splitting
+data into other file
 
 Version 0.4.0
 
 Support for input stream manipulation as
 to strip unnecessary data
-
-Set max size of a single file before splitting
-data into other file
 
 Version 0.5.0
 ...

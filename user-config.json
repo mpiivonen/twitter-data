@@ -1,8 +1,12 @@
 {
   "twitter": {
-    "apiKey": "user provided api key",
+    "consumer_key": "",
+    "consumer_secret": "",
+    "access_token_key": "",
+    "access_token_secret": "",
+
     "streamType": {
-      "basic": "stream url",
+      "basic": "statuses/sample",
       "userSpecific": {
         "example1": "example1",
         "example2": "example2"
@@ -10,6 +14,7 @@
     }
   },
   "local": {
-    "storage": "local url here"
+    "storage": "./testfile.json",
+    "maxSize": "2 MB"
   }
 }
