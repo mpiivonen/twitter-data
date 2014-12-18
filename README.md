@@ -7,7 +7,7 @@ twitter-data
 [![Coverage Status](https://coveralls.io/repos/mpiivonen/twitter-data/badge.png?branch=master)](https://coveralls.io/r/mpiivonen/twitter-data?branch=master)
 
 NPM module to store and manipulate twitter data got via streaming API.
-Twitter auth and client creationg is based on https://github.com/AvianFlu/ntwitter
+Twitter auth and client creating is based on https://github.com/AvianFlu/ntwitter
 
 Current version 0.3.0
 
