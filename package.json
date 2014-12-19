@@ -20,7 +20,9 @@
     "index.js",
     "LICENCE",
     "README.md",
-    "./lib"
+    "./lib",
+    "lib",
+    "user-config.json"
   ],
   "author": "Markus Iivonen <markuspiivonen@gmail.com> (https://github.com/mpiivonen/twitter-data)",
   "licenses": [
