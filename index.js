@@ -3,16 +3,23 @@ var stream = require('./lib/twitter-stream.js');
 var fs = require('fs');
 var start = 0;
 
-var getStream = function(start,callback) {
-  if(start) {
-    stream.initConfig();
-    var file = stream.getStorage();
-    var writeStream = fs.createWriteStream(file, {'flags': 'a'});
-    var client = stream.createClient();
-    stream.saveStream(client,writeStream);
-    return callback("Getting stream");
-  }
-}
+module.exports = function (app, db) {
+  var module = {};
+
+  module.getStream = function(start,callback) {
+    if(start) {
+      stream.initConfig();
+      var file = stream.getStorage();
+      var writeStream = fs.createWriteStream(file, {'flags': 'a'});
+      var client = stream.createClient();
+      stream.saveStream(client,writeStream);
+      return callback("Getting stream");
+    }
+  };
+  return module;
+
+};
+
 var printHelp = function(callback) {
   var help = 'Help: \n';
   help += config.help;
@@ -51,7 +58,7 @@ else if(userArgs.indexOf('-v') != -1 || userArgs.indexOf('-V') != -1 || userArgs
   });
 }
 else {
-  getStream(start, function(status){
-    console.log(status);
-  });
+    //getStream(start, function(status){
+    //console.log(status);
+  //});
 }
