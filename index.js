@@ -1,7 +1,18 @@
 var config = require('./package.json');
 var stream = require('./lib/twitter-stream.js');
 var fs = require('fs');
+var start = 0;
 
+var getStream = function(start,callback) {
+  if(start) {
+    stream.initConfig();
+    var file = stream.getStorage();
+    var writeStream = fs.createWriteStream(file, {'flags': 'a'});
+    var client = stream.createClient();
+    stream.saveStream(client,writeStream);
+    return callback("Getting stream");
+  }
+}
 var printHelp = function(callback) {
   var help = 'Help: \n';
   help += config.help;
@@ -20,6 +31,10 @@ var printVersion = function(callback) {
 var userArgs= process.argv.slice(2);
 var useOptionalStream = '';
 
+// check if start option passed via commandline
+if(userArgs.indexOf('-s') != -1 || userArgs.indexOf('--start') != -1) {
+  start = 1;
+}
 // set selected stream
 if(userArgs.indexOf('--stream') != -1) {
   useOptionalStream = userArgs[(userArgs.indexOf('--stream')+1)];
@@ -36,10 +51,7 @@ else if(userArgs.indexOf('-v') != -1 || userArgs.indexOf('-V') != -1 || userArgs
   });
 }
 else {
-
-  stream.initConfig();
-  var file = stream.getStorage();
-  var writeStream = fs.createWriteStream(file, {'flags': 'a'});
-  var client = stream.createClient();
-  stream.saveStream(client,writeStream);
+  getStream(start, function(status){
+    console.log(status);
+  });
 }
