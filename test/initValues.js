@@ -12,19 +12,6 @@ exports['checkValues'] = function (test) {
     test.done();
 };
 
-exports['checkInit'] = function (test) {
-  stream.initConfig();
-  test.equal(stream.getStorage(),testUserConfig.local.storage);
-  test.deepEqual(stream.getConnection(),{
-    "consumer_key": testUserConfig.twitter.consumer_key,
-    "consumer_secret": testUserConfig.twitter.consumer_secret,
-    "access_token_key": testUserConfig.twitter.access_token_key,
-    "access_token_secret": testUserConfig.twitter.access_token_secret,
-    "stream" : testUserConfig.twitter.streamType.basic,
-    "optionalStream": testUserConfig.twitter.streamType.userSpecific
-  });
-  test.done();
-};
 exports['fileSize'] = function(test) {
 
   fs.truncate('./testfile.json', 0, function(){});
