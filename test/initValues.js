@@ -39,5 +39,15 @@ exports['fileSize'] = function(test) {
   });
 
   test.done();
+};
 
+exports['createClient'] = function(test) {
+
+  function testClient() {
+    var client = stream.createClient();
+    test.notEqual(typeof client, new Object());
+  }
+
+  testClient();
+  test.done();
 };
