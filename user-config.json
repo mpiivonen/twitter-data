@@ -1,9 +1,9 @@
 {
   "twitter": {
-    "consumer_key": "test",
-    "consumer_secret": "test",
-    "access_token_key": "test",
-    "access_token_secret": "test",
+    "consumer_key": "",
+    "consumer_secret": "",
+    "access_token_key": "1226945636-",
+    "access_token_secret": "",
 
     "streamType": {
       "basic": "statuses/sample",
@@ -15,6 +15,6 @@
   },
   "local": {
     "storage": "./testfile.json",
-    "maxSize": "2 MB"
+    "maxSize": "300 kB"
   }
 }
