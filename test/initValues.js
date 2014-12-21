@@ -37,7 +37,7 @@ exports['testStreams'] = function(test) {
   var writeStream = fs.createWriteStream("./testfile.json", {'flags': 'a'});
 
   stream.saveStream(client,writeStream,1);
-  setTimeout(function(){writeStream.end();},2001);
+  setTimeout(function(){writeStream.end();},2500);
 
   test.notEqual(typeof client, new Object());
   test.done();
