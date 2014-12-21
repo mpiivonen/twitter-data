@@ -2,6 +2,13 @@ var stream = require('../lib/twitter-stream.js');
 var testUserConfig = require('../user-config.json');
 var fs = require('fs');
 
+exports['checkValues'] = function (test) {
+    stream.initConfig();
+    test.notEqual(stream.getStorage().length,0);
+    test.notEqual(stream.getConnection().size,0);
+    test.done();
+};
+
 exports['fileSize'] = function(test) {
 
   fs.writeFile('./testfile.json', "");
