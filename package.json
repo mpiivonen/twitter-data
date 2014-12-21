@@ -1,8 +1,8 @@
 {
   "name": "twitter-data",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "To access twitter public streams",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "gulp && nodeunit"
   },
