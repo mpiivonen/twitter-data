@@ -22,6 +22,13 @@ exports['checkInit'] = function (test) {
     "stream" : testUserConfig.twitter.streamType.basic,
     "optionalStream": testUserConfig.twitter.streamType.userSpecific
   });
-
   test.done();
+};
+exports['fileSize'] = function(test) {
+  var test1 = null;
+  stream.getCompareFileSize('./testfile.json', "2 MB",function(ret){
+    test.equal(ret,0);
+  });
+  test.done();
+
 };
