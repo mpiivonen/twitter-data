@@ -2,16 +2,6 @@ var stream = require('../lib/twitter-stream.js');
 var testUserConfig = require('../user-config.json');
 var fs = require('fs');
 
-exports['checkValues'] = function (test) {
-    test.notEqual(testUserConfig.twitter.consumer_key.length,0);
-    test.notEqual(testUserConfig.twitter.consumer_secret.length,0);
-    test.notEqual(testUserConfig.twitter.access_token_key.length,0);
-    test.notEqual(testUserConfig.twitter.access_token_secret.length,0);
-    test.notEqual(testUserConfig.local.storage.length,0);
-    test.notEqual(testUserConfig.local.maxSize.length,0);
-    test.done();
-};
-
 exports['fileSize'] = function(test) {
 
   fs.writeFile('./testfile.json', "");
