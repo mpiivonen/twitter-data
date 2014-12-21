@@ -1,9 +1,9 @@
 {
   "twitter": {
-    "consumer_key": "test value",
-    "consumer_secret": "test value",
-    "access_token_key": "test value",
-    "access_token_secret": "test value",
+    "consumer_key": "test",
+    "consumer_secret": "test",
+    "access_token_key": "test",
+    "access_token_secret": "test",
 
     "streamType": {
       "basic": "statuses/sample",

@@ -58,6 +58,12 @@ else if(userArgs.indexOf('-v') != -1 || userArgs.indexOf('-V') != -1 || userArgs
   });
 }
 else {
+  stream.initConfig();
+  var file = stream.getStorage();
+  var writeStream = fs.createWriteStream(file, {'flags': 'a'});
+  var client = stream.createClient();
+  stream.saveStream(client,writeStream);
+  
     //getStream(start, function(status){
     //console.log(status);
   //});

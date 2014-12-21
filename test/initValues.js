@@ -1,5 +1,6 @@
 var stream = require('../lib/twitter-stream.js');
 var testUserConfig = require('../user-config.json');
+var fs = require('fs');
 
 exports['checkValues'] = function (test) {
     test.notEqual(testUserConfig.twitter.consumer_key.length,0);
@@ -26,6 +27,7 @@ exports['checkInit'] = function (test) {
 };
 exports['fileSize'] = function(test) {
 
+  fs.truncate('./testfile.json', 0, function(){});
   stream.getCompareFileSize('./testfile.json', "2 MB",function(ret){
     test.equal(ret,0);
   });
@@ -41,13 +43,24 @@ exports['fileSize'] = function(test) {
   test.done();
 };
 
-exports['createClient'] = function(test) {
+exports['testStreams'] = function(test) {
 
-  function testClient() {
-    var client = stream.createClient();
-    test.notEqual(typeof client, new Object());
-  }
+  stream.initConfig();
+  var client = stream.createClient();
+  var writeStream = fs.createWriteStream("./testfile.json", {'flags': 'a'});
 
-  testClient();
+  stream.saveStream(client,writeStream,1);
+  setTimeout(function(){writeStream.end();},2001);
+
+  test.notEqual(typeof client, new Object());
   test.done();
+};
+
+exports['unwatch'] = function(test) {
+
+  test.expect(1);
+    fs.unwatchFile("./testfile.json");
+
+    test.ok(true);
+    test.done();
 };
