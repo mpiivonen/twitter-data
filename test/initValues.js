@@ -14,7 +14,7 @@ exports['checkValues'] = function (test) {
 
 exports['fileSize'] = function(test) {
 
-  fs.truncate('./testfile.json', 0, function(){});
+  fs.writeFile('./testfile.json', "");
   stream.getCompareFileSize('./testfile.json', "2 MB",function(ret){
     test.equal(ret,0);
   });
