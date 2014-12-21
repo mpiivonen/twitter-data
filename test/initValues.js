@@ -25,10 +25,19 @@ exports['checkInit'] = function (test) {
   test.done();
 };
 exports['fileSize'] = function(test) {
-  var test1 = null;
+
   stream.getCompareFileSize('./testfile.json', "2 MB",function(ret){
     test.equal(ret,0);
   });
+
+  stream.getCompareFileSize('./testfile.json', "10 B",function(ret){
+    test.equal(ret,0);
+  });
+
+  stream.getCompareFileSize('./user-config.json', "300 B",function(ret){
+    test.equal(ret,1);
+  });
+
   test.done();
 
 };
